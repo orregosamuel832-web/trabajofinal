@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login - Concesionaria</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<div id="overlay-ficha"></div>
+<div id="ficha-detalle"></div>
+
+<body class="fade">
+    <header class="nav">
+        <div class="brand">Mazda - Acceso</div>
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="concesionarios.html">Concesionarios</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <section class="form-container">
+            <h2>Bienvenido</h2>
+            <p style="color:var(--muted)">Ingresa para ver el catálogo completo.</p>
+
+            <form id="loginForm" autocomplete="off">
+                <input type="text" placeholder="Usuario" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button class="btn" type="submit">Ingresar</button>
+            </form>
+
+            <button class="btn btn-secundario" onclick="location.href='registro.html'">
+                Registrarte
+            </button>
+        </section>
+    </main>
+    <footer>
+        <p> 2025 Proyecto Final HTML y CSS | Creado por Samuel Orrego</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

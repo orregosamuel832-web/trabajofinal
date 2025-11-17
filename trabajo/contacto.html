@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contacto - Mazda</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<div id="overlay-ficha"></div>
+<div id="ficha-detalle"></div>
+
+<body class="fade">
+    <header class="nav">
+        <div class="brand">Mazda, comodidad y estilo</div>
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="concesionarios.html">Concesionarios</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <h1>Contacto</h1>
+
+        <section class="form-contacto">
+            <h2>Escríbenos</h2>
+            <form id="contactForm">
+                <input name="nombre" type="text" placeholder="Nombre completo" required>
+                <input name="email" type="email" placeholder="Correo electrónico" required>
+                <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                <button class="btn" type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section style="margin-top:18px;">
+            <div id="seleccionado"></div>
+            <a id="whatsappBtn" class="btn" href="#" target="_blank"
+                onclick="abrirWhatsAppSeleccionado(event)">Contactar por WhatsApp</a>
+        </section>
+
+        <section id="ficha-detalle"></section>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        function abrirWhatsAppSeleccionado(e) {
+            e.preventDefault();
+            const sel = sessionStorage.getItem('carroSeleccionado');
+            if (!sel) {
+                alert('No hay ningún vehículo seleccionado. Elige uno desde el catálogo.');
+                return;
+            }
+            const item = JSON.parse(sel);
+            const telefono = "573005394276";
+            const texto = encodeURIComponent(`Hola, quiero más info del ${item.marca} ${item.modelo} (${item.precio ? new Intl.NumberFormat('es-CO').format(item.precio) : ''} COP).`);
+            window.open(`https://wa.me/${telefono}?text=${texto}`, '_blank');
+        }
+    </script>
+    <footer>
+        <p> 2025 Proyecto Final HTML y CSS | Creado por Samuel Orrego</p>
+    </footer>
+</body>
+
+</html>
