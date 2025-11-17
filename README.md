@@ -1,5 +1,3 @@
 Trabajo realizado por:
 
-Samuel Orrego
-Sofia Vazquez
-Breiner Mosquera
+Samuel Orrego, Sofia Vazquez y Breiner Mosquera
